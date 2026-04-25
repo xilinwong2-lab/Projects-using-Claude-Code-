@@ -1,0 +1,25 @@
+name: Morning Reminder
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # 7:00 AM UTC+8 (Malaysia / Singapore time)
+  workflow_dispatch:       # allows manual test run from GitHub Actions tab
+
+jobs:
+  send-reminder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Send morning reminder email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python morning-reminder/send_reminder.py

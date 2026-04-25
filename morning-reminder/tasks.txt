@@ -1,0 +1,9 @@
+# My Daily To-Do List
+# Edit this file to update your tasks.
+# Each line = one task.
+
+- [ ] Review emails
+- [ ] Check today's schedule
+- [ ] Complete top priority task
+- [ ] Exercise / walk
+- [ ] Drink enough water
