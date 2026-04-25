@@ -2,7 +2,7 @@ import smtplib
 import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from datetime import date
+from datetime import datetime, timezone, timedelta
 
 
 def read_tasks(filepath="morning-reminder/tasks.txt"):
@@ -20,7 +20,8 @@ def send_email(tasks):
     password = os.environ["GMAIL_APP_PASSWORD"]
     recipient = os.environ["GMAIL_USER"]
 
-    today = date.today().strftime("%A, %d %B %Y")
+    tz = timezone(timedelta(hours=8))
+    today = datetime.now(tz).strftime("%A, %d %B %Y")
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"Good morning! Your To-Do List for {today}"
