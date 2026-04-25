@@ -2,8 +2,6 @@
 # Edit this file to update your tasks.
 # Each line = one task.
 
-- [ ] Review emails
-- [ ] Check today's schedule
-- [ ] Complete top priority task
-- [ ] Exercise / walk
-- [ ] Drink enough water
+- [ ] Differentiation practise qn (1 hr)
+- [ ] Week 5 Lecture 
+- [ ] Explore claude code 
